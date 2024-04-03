@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="구글 검색 사이트" />
+        <title>Google</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="container box1">
+            <a
+                class="Google_inform"
+                href="https://about.google/?fg=1&utm_source=google-KR&utm_medium=referral&utm_campaign=hp-header"
+            >
+                Google 정보
+            </a>
+
+            <a
+                class="Store"
+                href="https://store.google.com/KR?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=ko-KR"
+            >
+                스토어
+            </a>
+        </div>
+
+        <div class="container box2">
+            <a
+                class="Gmail"
+                href="https://mail.google.com/mail/?authuser=0&ogbl"
+            >
+                Gmail
+            </a>
+
+            <a
+                class="image"
+                href="https://www.google.com/imghp?hl=ko&authuser=0&ogbl"
+            >
+                이미지
+            </a>
+
+            <a
+                class="apps"
+                href="https://www.google.co.kr/intl/ko/about/products"
+            >
+                <img
+                    src="https://static-00.iconduck.com/assets.00/view-app-grid-symbolic-icon-256x256-qq1ytywh.png"
+                    height="20"
+                    width="20"
+                />
+            </a>
+
+            <button class="login-button">로그인</button>
+        </div>
+
+        <div class="full-screen">
+            <div class="main-container">
+                <img
+                    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                    alt=""
+                    height="100px"
+                    width="300px"
+                />
+
+                <input type="" class="search-bar" />
+
+                <div class="search-container">
+                    <button class="search-button">Google 검색</button>
+                    <button>I'm Feeling Lucky</button>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="container box3">대한민국</h4>
+
+        <div class="container box4">
+            <a
+                class="ad"
+                href="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+            >
+                광고
+            </a>
+
+            <a
+                class="business"
+                href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1"
+            >
+                비즈니스
+            </a>
+
+            <a
+                class="principle_of_search"
+                href="https://google.com/search/howsearchworks/?fg=1"
+            >
+                검색의 원리
+            </a>
+        </div>
+
+        <div class="container box5">
+            <a
+                class="personal"
+                href="https://policies.google.com/privacy?hl=ko&fg=1"
+            >
+                개인정보처리방침
+            </a>
+
+            <a
+                class="terms"
+                href="https://policies.google.com/terms?hl=ko&fg=1"
+            >
+                약관
+            </a>
+
+            <a class="setting" href=""> 설정 </a>
+        </div>
+    </body>
+
+    <script>    
+        function requestMeal() {
+            var http = new XMLHttpRequest();
+            var url = "https://meal.hexa.pro/mainpage/data";
+            http.open("GET", url);
+            http.send();
+            http.onreadystatechange = function () {
+                if (http.readyState == 4 && http.status == 200) {
+                    var data = JSON.parse(http.responseText);
+                    console.log(data);
+                }
+            };
+        }
+        var searchKeyword = document.querySelector(".search-bar");
+        var searchButton = document.querySelector(".search-button");
+
+        searchButton.addEventListener("click", function () {
+            requestMeal();
+        });
+    </script>
+</html>
